@@ -20,7 +20,7 @@ theme = 'minimal-black'
     title = "Hi, I'm mignotus."
     role = "Building minimal, fast web experiences."
     summary = "Using Hugo to create this website."
-    avatar = "images/avatar.jpg"  # Optional
+    avatar = "images/avatar.png"  # Optional
     location = "Rome, Italy"
 
     [params.hero.primary]
