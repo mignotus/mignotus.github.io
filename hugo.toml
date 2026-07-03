@@ -30,15 +30,110 @@ theme = 'minimal-black'
     [params.hero.secondary]
       label = "Read the blog"
       href = "/blog/"
-  
+
+  # Home Page Configuration
   [params.home]
+    sections = ["hero", "now", "tech-marquee", "projects", "posts"]
+    showNowSection = true
+    showFeaturedProjects = true
+    showLatestPosts = true
+    featuredProjectsLimit = 3
+    latestPostsLimit = 3
+    projectsTitle = "Selected Work"
+    projectsSubtitle = ""
+    blogTitle = "Latest Writing"
+    blogSubtitle = ""
+    techMarqueeLabel = "Experienced In"
+
+    # Technology Stack Display
     [[params.home.tech]]
-        label = "Python"
-        icon = "devicon-python-plain"
+      label = "Python"
+      icon = "devicon-python-plain"
 
     [[params.home.tech]]
-        label = "Docker"
-        icon = "devicon-docker-plain"
+      label = "Java"
+      icon = "devicon-java-plain"
+
+    [[params.home.tech]]
+      label = "Spring"
+      icon = "devicon-spring-plain"  
+
+    [[params.home.tech]]
+      label = "Vaadin"
+      icon = "devicon-vaadin-plain"    
+
+    [[params.home.tech]]
+      label = "Debian"
+      icon = "devicon-debian-plain"
+
+    [[params.home.tech]]
+      label = "GitLab"
+      icon = "devicon-gitlab-plain"
+
+    [[params.home.tech]]
+      label = "Docker"
+      icon = "devicon-docker-plain"
+
+    [[params.home.techReverse]]
+      label = "PostgreSQL"
+      icon = "devicon-postgresql-plain"
+
+    [[params.home.techReverse]]
+      label = "MongoDB"
+      icon = "devicon-mongodb-plain"
+
+    [[params.home.techReverse]]
+      label = "Git"
+      icon = "devicon-git-plain"
+
+    [[params.home.techReverse]]
+      label = "Hugo"
+      icon = "devicon-hugo-plain"  
+
+    [[params.home.techReverse]]
+      label = "Jenkins"
+      icon = "devicon-jenkins-plain"   
+
+    [[params.home.techReverse]]
+      label = "JetBrains"
+      icon = "devicon-jetbrains-plain" 
+
+    [[params.home.techReverse]]
+      label = "Json"
+      icon = "devicon-json-plain" 
+
+    [[params.home.techReverse]]
+      label = "Linux"
+      icon = "devicon-linux-plain"          
+
+    [[params.home.techReverse]]
+      label = "Liquibase"
+      icon = "devicon-liquibase-plain" 
+
+    [[params.home.techReverse]]
+      label = "Markdown"
+      icon = "devicon-markdown-original"  
+
+    [[params.home.techReverse]]
+      label = "YAML"
+      icon = "devicon-yaml-plain"  
+
+    [[params.home.techReverse]]
+      label = "Wordpress"
+      icon = "devicon-wordpress-plain"
+
+    [[params.home.techReverse]]
+      label = "WooCommerce"
+      icon = "devicon-woocommerce-plain"            
+
+    [[params.home.techReverse]]
+      label = "Traefik"
+      icon = "devicon-traefikproxy-plain" 
+
+    [[params.home.techReverse]]
+      label = "pfSense"
+      icon = "devicon-pfsense-plain"  
+
 
   # Social Links
   [[params.social]]
