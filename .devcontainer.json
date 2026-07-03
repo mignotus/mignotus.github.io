@@ -1,0 +1,8 @@
+{
+  "name": "Hugo Dev Environment (Ubuntu)",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu", 
+  "features": {
+    "ghcr.io/devcontainers/features/hugo:1": {}
+  },
+  "forwardPorts": [1313]
+}
