@@ -75,3 +75,7 @@ theme = 'minimal-black'
     codeFences = true
     guessSyntax = true
     style = "monokai"
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
