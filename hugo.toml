@@ -30,6 +30,15 @@ theme = 'minimal-black'
     [params.hero.secondary]
       label = "Read the blog"
       href = "/blog/"
+  
+  [params.home]
+    [[params.home.tech]]
+        label = "Python"
+        icon = "devicon-python-plain"
+
+    [[params.home.tech]]
+        label = "Docker"
+        icon = "devicon-docker-plain"
 
   # Social Links
   [[params.social]]
