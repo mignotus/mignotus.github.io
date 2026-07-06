@@ -3,57 +3,66 @@ locale = 'en-us'
 title = 'mignotus'
 theme = 'minimal-black'
 
+#BLOG BLOG IS COMMENTED. NOT SHOWNM BUT EXISTS.
+
+# Enable search index generation and web app manifest
+[outputs]
+  home = ["HTML", "RSS", "JSON", "WebAppManifest"]
+
+[outputFormats.WebAppManifest]
+  mediaType = "application/manifest+json"
+  rel = "manifest"
+  baseName = "manifest"
+  isPlainText = true
+  notAlternative = true
+
 [params]
   brand = "mignotus"
+  description = "A personal site"
 
   # Favicon (place files in /static/)
   favicon = "favicon.svg"
   appleTouchIcon = "apple-touch-icon.png"
 
+  # Logo (optional)
+  # logo = "images/logo.png"
+
+  # Project and blog intro text
+  projectsIntro = "projectsIntro | Selected projects to display list." # Can be empty
+  #BLOG blogIntro = "blogIntro"   # Can be empty
+  
+  # Web App Manifest Configuration (PWA support)
+  [params.manifest]
+    themeColor = "#a855f7"
+    backgroundColor = "#000000"
+    categories = ["portfolio", "developer"]
+    #BLOG categories = ["blog", "portfolio", "developer"]
+
+    # Custom icon configuration (optional)
+    # If not specified, defaults to /icons/android-chrome-*.png
+    # [[params.manifest.icons]]
+    #   src = "/icons/android-chrome-192x192.png"
+    #   sizes = "192x192"
+    #   type = "image/png"
+    #   purpose = "any maskable"
+
   # Theme Configuration
   [params.theme]
     defaultTheme = "system"  # "light", "dark", or "system"
-
-  # Hero Section
-  [params.hero]
-    badge = "Software Engineer"
-    title = "Hi, I'm mignotus."
-    role = "Building minimal, fast web experiences."
-    summary = "Using Hugo to create this website."
-    avatar = "images/avatar.png"  # Optional
-    location = "Rome, Italy"
-    focus = "Currently focused on Hugo themes & developer experience."
-    available = true
-    availableLabel = "Available for work"
-
-    nowLabel = "Quick Facts"
-    nowIntro = "Right now I'm mainly:"
-    now = [
-      "Building minimal Hugo themes",
-      "Exploring dark-mode design patterns",
-      "Writing about web performance"
-    ]
-
-    [params.hero.primary]
-      label = "View projects"
-      href = "/projects/"
-
-    [params.hero.secondary]
-      label = "Read the blog"
-      href = "/blog/"
 
   # Home Page Configuration
   [params.home]
     sections = ["hero", "now", "tech-marquee", "projects", "posts"]
     showNowSection = true
     showFeaturedProjects = true
-    showLatestPosts = true
+    #BLOG showLatestPosts = true
+    showLatestPosts = false
     featuredProjectsLimit = 3
     latestPostsLimit = 3
     projectsTitle = "Selected Work"
     projectsSubtitle = ""
-    blogTitle = "Latest Writing"
-    blogSubtitle = ""
+    #BLOG blogTitle = "Latest Writing"
+    #BLOG blogSubtitle = ""
     techMarqueeLabel = "Experienced In"
 
     # Technology Stack Display
@@ -144,6 +153,74 @@ theme = 'minimal-black'
     [[params.home.techReverse]]
       label = "pfSense"
       icon = "devicon-pfsense-plain"  
+  
+  # About Page Alternative Layout Configuration - Optional
+  [params.about.alt]
+    # Stats displayed in the profile card sidebar
+    [[params.about.alt.stats]]
+      value = "5+"
+      label = "Years Coding"
+
+    [[params.about.alt.stats]]
+      value = "20+"
+      label = "Projects"
+
+    [[params.about.alt.stats]]
+      value = "∞"
+      label = "Hours Spent"
+
+    # Skills/Tech Stack badges with icons
+    [[params.about.alt.skills]]
+      label = "JavaScript"
+      icon = "devicon-javascript-plain"
+
+    [[params.about.alt.skills]]
+      label = "Python"
+      icon = "devicon-python-plain"
+
+    [[params.about.alt.skills]]
+      label = "React"
+      icon = "devicon-react-original"
+
+    [[params.about.alt.skills]]
+      label = "Docker"
+      icon = "devicon-docker-plain"
+
+    [[params.about.alt.skills]]
+      label = "PostgreSQL"
+      icon = "devicon-postgresql-plain"
+
+    [[params.about.alt.skills]]
+      label = "AWS"
+      icon = "devicon-amazonwebservices-plain"
+
+  # Hero Section
+  [params.hero]
+    badge = "Software Engineer"
+    title = "Hi, I'm mignotus."
+    role = "Building minimal, fast web experiences."
+    summary = "Using Hugo to create this website."
+    avatar = "images/avatar.png"  # Optional
+    location = "Rome, Italy"
+    focus = "Currently focused on Hugo themes & developer experience."
+    available = true
+    availableLabel = "Available for work"
+
+    nowLabel = "Quick Facts"
+    nowIntro = "Right now I'm mainly:"
+    now = [
+      "Building minimal Hugo themes",
+      "Exploring dark-mode design patterns",
+      "Writing about web performance"
+    ]
+
+    [params.hero.primary]
+      label = "View projects"
+      href = "/projects/"
+
+    #BLOG [params.hero.secondary]
+    #BLOG   label = "Read the blog"
+    #BLOG   href = "/blog/"
 
   # Icon Libraries
   [params.icons]
@@ -161,34 +238,103 @@ theme = 'minimal-black'
     url = "https://linkedin.com/in/mignotus"
     icon = "fa-brands fa-linkedin-in"
 
+  # Analytics Configuration
+  # [params.analytics]
+    # Google Analytics (GA4)
+    # googleAnalytics = "G-XXXXXXXXXX"
+
+    # Plausible Analytics (privacy-friendly)
+    # [params.analytics.plausible]
+    #   enabled = true
+    #   domain = "yourdomain.com"
+    #   scriptUrl = "https://plausible.io/js/script.js"
+
+    # Umami Analytics (self-hosted option)
+    # [params.analytics.umami]
+    #   enabled = true
+    #   scriptUrl = "https://analytics.yourdomain.com/script.js"
+    #   websiteId = "your-website-id"
+
+    # Fathom Analytics
+    # [params.analytics.fathom]
+    #   enabled = true
+    #   scriptUrl = "https://cdn.usefathom.com/script.js"
+    #   siteId = "YOUR-SITE-ID"
+
+# Navigation Menu
 [menu]
   [[menu.main]]
     name = "Home"
+    pageRef = "/"
     url = "/"
     weight = 1
+    identifier = "home"
+    [menu.main.params]
+      icon = "fa-solid fa-house"
 
   [[menu.main]]
     name = "About"
+    pageRef = "about"
     url = "/about/"
     weight = 2
+    identifier = "about"
+    [menu.main.params]
+      icon = "fa-solid fa-user"
 
   [[menu.main]]
     name = "Projects"
+    pageRef = "projects"
     url = "/projects/"
     weight = 3
+    identifier = "projects"
+    [menu.main.params]
+      icon = "fa-regular fa-folder-open"
 
-  [[menu.main]]
-    name = "Blog"
-    url = "/blog/"
-    weight = 4
+  #BLOG [[menu.main]]
+  #BLOG   name = "Blog"
+  #BLOG   pageRef = "blog"
+  #BLOG   url = "/blog/"
+  #BLOG   weight = 4
+  #BLOG   identifier = "blog"
+  #BLOG   [menu.main.params]
+  #BLOG     icon = "fa-regular fa-note-sticky"
 
+# Markup Configuration
 [markup]
+  # Table of Contents
   [markup.tableOfContents]
     startLevel = 2
     endLevel = 4
 
+  # Goldmark Renderer (Markdown)
   [markup.goldmark.renderer]
     unsafe = true
+
+  [markup.goldmark.parser]
+      [markup.goldmark.parser.attribute]
+        block = true
+
+  [markup.goldmark.extensions]
+    typographer = true
+    linkify = true
+    table = true
+    strikethrough = true
+    taskList = true
+    definitionList = true
+    footnote = true
+
+    [markup.goldmark.extensions.extras.delete]
+      enable = true
+    [markup.goldmark.extensions.extras.insert]
+      enable = true
+    [markup.goldmark.extensions.extras.mark]
+      enable = true
+    # LaText extension
+    [markup.goldmark.extensions.passthrough]
+      enable = true
+      [markup.goldmark.extensions.passthrough.delimiters]
+        inline = [['$', '$']]
+        block = [['$$', '$$']]
 
   [markup.highlight]
     codeFences = true
